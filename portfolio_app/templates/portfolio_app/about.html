@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About{% endblock%}
+
+{% block content %}
+
+<div class="about-wrapper">
+    <section class="about-section">
+        
+        <div class="about">
+            <div class="about-image">
+                <img src="{% static 'image/about.png' %}" alt="profile" />
+            </div>
+            <h1 class="title-one">Hello<span>!</span></h1>
+            <h2 class="title-two">Here's who I am & what I do</h2>
+        
+            <div class="about-para">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, aspernatur possimus ullam quaerat,
+                    laboriosam ex voluptate aliquid laborum, obcaecati ratione accusamus! Ea nisi modi dolor nam
+                    numquam? Temporibus, molestias amet.</p>
+            </div>
+
+            <div class="resume-btns"> 
+                <a class="resumes" href="{% url 'download' %}" class="btn btn-pink">DOWNLOAD RESUME</a>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+{% endblock %}

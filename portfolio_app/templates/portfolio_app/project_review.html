@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Review{% endblock %}
+
+{% block content %}
+
+<section class="add_review-section">
+  <div class="add_review">
+    <form method="post">
+      {% csrf_token %}
+      {{ review.as_p }}
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+{% endblock %} 

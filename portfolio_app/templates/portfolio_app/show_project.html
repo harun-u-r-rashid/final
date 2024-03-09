@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Project{% endblock %}
+
+{% block content %}
+
+<section class="project-section">
+    <br />
+    <div class="project-container">
+        <div class="project-title">
+            <h1><b>MY PROJECT</b></h1>
+        </div>
+        <br/>
+
+        <section class="addproject-btns">
+            <div>
+                <a class="add_projects" href="{% url 'add_project' %}">Add Project+</a>
+            </div>
+        </section>
+        <br />
+
+        <div class="project-content">
+            {% if project %}
+            {% for project in project %}
+
+            <div class="project-item">
+                <div class="project-img">
+                    <img src="{{ project.image.url }}">
+                </div>
+                <div class="project-text">
+                    <h3 class="btns"><a href="{% url 'project_details' project.pk %}">{{ project.title }}</a></h3>
+                    <h2>{{ project.project_category }}</h2>
+                    {% if project.avg_rating %}
+                    <p>Average Rating: {{ project.avg_rating }}</p>
+                    {% else %}
+                    <p>No ratings yet.</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+
+            {% else %}
+            <div>
+                <h3>No projects to show!</h3>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock%}
+
+{% block content %}
+
+<section class="home-section">
+  <div class="home-container">
+    <div class="homecontent">
+      <p class="home-subtitle"><br /><br />HELLO!</p>
+      <h1 class="home-title">
+        I'm <span>X, <br /></span>BeckEnd Developer
+      </h1>
+      <p class="home-description">           
+        Leurm was a greasy Hutt and was considered an especially large member of his species. Slithering constituted his method of forward locomotion, during which Leurm was able to flatten his girth to effect greater traction. His predilection for crime earned him a stint in the Armand Isard Correctional Facility, though his tenure did nothing to diminish his violent tendencies. While former Jerous Wookiee. 
+      </p>
+
+    
+
+
+      <div class="project-btns">
+        <a class="project" href="{% url 'show_project' %}">Show Project</a>
+      </div>
+    </div>
+
+    <div class="image">
+      <img src="{% static 'image/picture.png' %}" alt="profile" />
+    </div>
+  
+  </div>
+  
+</section>
+
+{% endblock %}

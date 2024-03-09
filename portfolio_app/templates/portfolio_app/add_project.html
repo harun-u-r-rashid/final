@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Add Project{% endblock %}
+
+{% block content %}
+
+<section class="addproject-section">
+  <div class="addproject">
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ project.as_p }}
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+      </div>
+    </form>
+  </div>
+
+</section>
+
+{% endblock %} 
