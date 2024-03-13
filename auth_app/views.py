@@ -18,7 +18,7 @@ def user_register(request):
             
             user = Account.objects.create_user(first_name=first_name, last_name=last_name, email=email, username=username, password=password)
             user.phone_number = phone_number
-            user.picture = request.FILES['picture']
+            user.picture = request.FILES.get('picture')
             user.save()
             messages.success(request, 'Registration successful. Please log in.')
             return redirect('login')
