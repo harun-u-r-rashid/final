@@ -40,11 +40,13 @@ def user_login(request):
                     login(request, user)
                     messages.success(request, "Succeessfully loged in")
                     return redirect('home')
+                else:
+                    messages.error(request, "Invalid email or password!")
+                    
         else:
             login_form = AuthenticationForm()
-            messages.error(request, "Invalid email or password!")
             return render(request, 'auth_app/login.html', {'login_form':login_form})
-    return render(request, 'auth_app/register.html')
+    return redirect('register')
 
 
 
