@@ -15,7 +15,6 @@ def user_register(request):
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
             username = form.cleaned_data['username']
-            
             user = Account.objects.create_user(first_name=first_name, last_name=last_name, email=email, username=username, password=password)
             user.phone_number = phone_number
             user.picture = request.FILES.get('picture')
@@ -53,8 +52,15 @@ def user_logout(request):
     logout(request)
     messages.success(request, "Successfully Logout")
     return render(request, 'portfolio_app/home.html')       
-        
-    
+   
+       
+ 
+def show_user_profile(request):
+    profile = Account.objects.all() 
+    return render(request, 'auth_app/show_profile.html', {'profile':profile})
+
+
+
         
 def user_profile_edit(request):
     if request.user.is_authenticated:
@@ -66,8 +72,9 @@ def user_profile_edit(request):
                 return redirect('home')
         else:
             form = ChangeUserDataForm(instance = request.user)
-        return render(request, 'auth_app/profile.html', {'form':form})
+        return render(request, 'auth_app/edit_profile.html', {'form':form})
     
     else:
         return redirect('register')          
-    
+   
+ 

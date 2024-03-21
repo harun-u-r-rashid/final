@@ -6,18 +6,32 @@
 
 {% block content %}
 
-<section class="contact-section">
-  <div class="contact">
-    <h1>GET IN TOUCH</h1>
-    <form method="post">
+<div class="contact">
+  <h2>GET IN TOUCH</h2>
+  <form method="POST">
+    <div class="contact-child">
       {% csrf_token %}
       {{ form.as_p }}
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block">Submit</button>
-      </div>
-    </form>
+    </div>
+    <div>
+      <button class="contact-button">Send message</button>
+    </div>
+  </form>
+  
+</div>
+
+<div class="footer-container">
+  <h1>CONTACT VIA SOCIAL MEDIA</h1>
+  <div class="social-icons">
+    
+    <a href=""><i class="fa-brands fa-facebook"></i></a>
+    <a href=""><i class="fa-brands fa-instagram"></i></a>
+    <a href=""><i class="fa-brands fa-twitter"></i></a>
+    <a href=""><i class="fa-brnads fa-google-plus"></i></a>
   </div>
 
-</section>
+</div>
+
 
 {% endblock %} 
+

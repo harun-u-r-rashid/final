@@ -5,23 +5,53 @@
 
 {% block content %}
 
-<section class="details-section">
-    <div class="details-container">
+<section class="section">
+
+    <div class="details-reviews-container">
         <div class="details-content">
             <h2>{{ project_details.title }}</h2>
             <p>Category: {{ project_details.project_category }}</p>
-            <p>Technologies Used: {{ project_details.technologies_used }}</p>
+            <p>Technologies: {{ project_details.technologies_used }}</p>
             <p>Description: {{ project_details.description }}</p>
-            {% if project_details.image %}
             <img src="{{ project_details.image.url }}" alt="{{ project_details.title }}">
-            {% endif %}
-            <p>URL: <a href="{{ project_details.url }}">{{ project_details.url }}</a></p>
-        </div>
-        <div class="review-btns">
-            <a class="reviews" href="{% url 'review' %}" class="btn btn-pink">Add Review+</a>
-        </div>
+            <p class="url">URL: <a href="{{ project_details.url }}">{{ project_details.url }}</a></p>
 
+            <div class="review-btns">
+                <a class="btns" href="{% url 'review' %}" class="btn btn-pink">Add Review+</a>
+            </div>
+            
+        </div>
     </div>
+        <aside class="review-side">
+            <div class="review">
+                <h2 class="title">VIEWERS REVIEW</h2>
+                {% if reviews %}
+                {% for r in reviews %}
+                <div class="body-review">
+                    <h1>rating: {{r.rating}}</h1>
+                    <p>
+                        {{r.review}}
+                    </p>
+                   
+                    <div class="rating">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star-half"></i>
+                        <i class="far fa-star-half"></i>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <h1 class="noreview">No reviews yet</h2>
+                {% endif %}
+            </div>
+        </aside>
+    
 </section>
+
+
 
 {% endblock %}

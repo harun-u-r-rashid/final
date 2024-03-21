@@ -3,17 +3,18 @@
 
 {% block title %}Register{% endblock %}
 {% block content %}
-<section class="register-section">
-  <div class="register">
-    <form method="post" enctype="multipart/form-data">
+
+<div class="register">
+  <h2>Ready to join us? Fill in your details below to sign up!</h2>
+  <form method="POST" enctype="multipart/form-data">
+    <div class="child-register">
       {% csrf_token %}
-      {{ form.as_p }}
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block">Register</button>
-      </div>
-    </form>
-  </div>
-
-</section>
-
+      {{form.as_p}}
+    </div>
+    <div >
+      <button class="signup-button">signup</button>
+    </div>
+  </form>
+</div>
 {% endblock %}
+

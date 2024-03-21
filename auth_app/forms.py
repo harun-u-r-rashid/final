@@ -6,41 +6,66 @@ from django.core import validators
 
 
 class RegistrationForm(forms.ModelForm):
+    
     username = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder' : "Enter your username",
-        'class' : 'form-control'
-    }))
+    'class': 'form-control',
+    'type': 'text',
+    'placeholder': 'Username'
+}))
+
+
+    
     first_name = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder' : "Enter your first name",
-        'class' : 'form-control'
+        'class':'form-control',
+        'type':'text',
+        
+        'placeholder':'First Name'
     }))
     
     last_name = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder' : "Enter your last name",
-        'class' : 'form-control'
+        'class': 'form-control',
+        'type': 'text',
+        
+        'placeholder': 'Last Name'
     }))
+
     
-    picture = forms.ImageField(required=False)
+    
+    
+    picture = forms.ImageField(required=False, widget=forms.FileInput(attrs={
+        'class': 'form-control',
+      
+    }))
     
     
     phone_number = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder' : "Enter your phone number",
-        'class' : 'form-control'
+        'class': 'form-control',
+        'type': 'text',
+      
+        'placeholder': 'Phone Number'
     }))
+
+
     
     email = forms.CharField(widget=forms.EmailInput(attrs={
-        'placeholder' : "Enter your first name",
-        'class' : 'form-control'
+       'class': 'form-control',
+        'type': 'email',
+        'placeholder': 'Email'
     }))
     
     password = forms.CharField(widget = forms.PasswordInput(attrs={
-        'placeholder' : "Enter password",
-        'class' : 'form-control'
+       'class': 'form-control',
+        'type': 'password',
+        
+        'placeholder': 'Password'
     }))
     
+    
     confirm_password = forms.CharField(widget=forms.PasswordInput(attrs={
-        'placeholder' : 'Confirm Password',
-        'class' : 'form-control'
+        'class': 'form-control',
+        'type': 'password',
+       
+        'placeholder': 'Confirm Password'
     }))
     
     
@@ -86,8 +111,12 @@ class ChangeUserDataForm(forms.ModelForm):
         'class' : 'form-control'
     }))
     
+    picture = forms.ImageField(widget=forms.FileInput(attrs={
+        'class':'form-control'
+    }))
+    
     
     class Meta:
         model = Account
-        fields = ['first_name', 'last_name', 'phone_number', 'email']
+        fields = ['first_name', 'last_name','picture', 'phone_number', 'email']
         

@@ -6,16 +6,18 @@
 
 {% block content %}
 
-<section class="add_review-section">
-  <div class="add_review">
+  <div class="addreview">
     <form method="post">
-      {% csrf_token %}
-      {{ review.as_p }}
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+      <div class="addreview-child">
+        {% csrf_token %}
+        {{ review.as_p }}
+      </div>
+    
+      <div>
+        <button class="addreview-button">Submit</button>
       </div>
     </form>
   </div>
-</section>
+
 
 {% endblock %} 

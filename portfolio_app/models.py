@@ -22,13 +22,11 @@ class Blog(models.Model):
     title = models.CharField(max_length = 30)
     content = models.TextField()
     author = models.CharField(max_length = 30)
-    
+    image = models.ImageField(default=False, upload_to='upload', blank=False)
     create_date = models.DateTimeField(default=timezone.now)
     
     def __str__(self):
         return f"{self.title}"
-    
-    
     
 class Contact(models.Model):
     name = models.CharField(null = False, max_length = 30)
@@ -46,13 +44,11 @@ class Project(models.Model):
     project_category = models.CharField(max_length=20, choices=PROJECT_CATEGORY)
     description = models.TextField()
     technologies_used = models.TextField()
-    image = models.ImageField(upload_to='upload', blank = True)
+    image = models.ImageField(upload_to='upload', blank=False)
     
     url = models.URLField()
     def __str__(self):
         return f"Title : {self.title} -- Project Category : {self.project_category}"
-    
-    
     
     
 class ProjectReview(models.Model):
@@ -69,8 +65,6 @@ class ProjectReview(models.Model):
         average_rating = ProjectReview.objects.filter(project = self.project).aggregate(Avg('rating'))['rating__avg']
         return average_rating
     
-   
-   
    
 class Resume(models.Model):
     file = models.FileField()

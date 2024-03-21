@@ -15,5 +15,6 @@ urlpatterns = [
     path('add_project/', views.add_project, name = 'add_project'),
     path('project_details/<str:title>', views.project_details, name = 'project_details'),
     path('review/', views.project_review, name='review'),
+    #path('show_review/<str:title>', views.show_review, name = 'show_review'),
     path('download/', views.download_resume, name = 'download'),     
 ]

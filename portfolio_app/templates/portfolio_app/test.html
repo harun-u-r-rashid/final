@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Skill{% endblock%}
+
+{% block content %}
+
+<section id="testomonials">
+    <div class="testomonial-heading">
+        <span>
+            Comments
+        </span>
+        <h1>
+            Clients says
+        </h1>
+    </div>
+
+    <div class="testomonial-box-container">
+        <div class="testomonial-box">
+            <div class="box-top">
+                <div class="profile">
+                    <div class="name-user">
+
+                        
+
+                        {% if show_review %}
+                        {% for r in show_review %}
+                        <span>
+                            {{r.rating}}
+                        </span>
+                        <span>
+                            {{r.review}}
+                        </span>
+                        <div class="reviews">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+
+
+                        {% endfor %}
+                        {% endif %}
+
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock %}

@@ -4,7 +4,7 @@ from .constants import PROJECT_CATEGORY, RATING
 from .models import Blog, Skill, Contact, Project , ProjectReview
 
 class BlogForm(forms.ModelForm):
-    title = forms.CharField(widget=forms.TextInput(attrs={
+    title = forms.CharField(required = True, widget=forms.TextInput(attrs={
         'placeholder' : "Enter title",
         'class' : 'form-control'
     }))
@@ -21,12 +21,17 @@ class BlogForm(forms.ModelForm):
         'class' : 'form-control'
     }))
     
+    image = forms.ImageField(widget=forms.FileInput(attrs={
+        'class': 'form-control',
+        
+    }))
+    
     create_date = forms.DateInput()
     
     
     class Meta:
         model = Blog
-        fields = ['author', 'title', 'content']
+        fields = ['author', 'title', 'content', 'image']
 
 
 
@@ -41,12 +46,12 @@ class SkillForm(forms.ModelForm):
     }))
     
     skill_category = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder' : "Enter skill category",
+        'placeholder' : "skill Category..",
         'class' : 'form-control'
     }))
     
     description = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder' : "Enter description",
+        'placeholder' : "Description..",
         'class' : 'form-control'
     }))
      
@@ -58,22 +63,22 @@ class SkillForm(forms.ModelForm):
 
 class ContactForm(forms.ModelForm):
     name = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder' : "Enter your name",
+        'placeholder' : "Name...",
         'class' : 'form-control'
     }))
     
     email = forms.EmailField(widget = forms.EmailInput(attrs={
-        'placeholder' : "Enter your email",
+        'placeholder' : "Email...",
         'class' : 'form-control'
     }))
     
     number = forms.IntegerField(widget=forms.NumberInput(attrs={
-        'placeholder' : "Enter your number",
+        'placeholder' : "Number...",
         'class' : 'form-control'
     })) 
     
     description = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder' : "Enter description",
+        'placeholder' : "Description...",
         'class' : 'form-control'
     }))
     
@@ -107,10 +112,13 @@ class ProjectForm(forms.ModelForm):
         'class' : 'form-control'
     }))
     
-    image = forms.ImageField(widget=forms.FileInput(attrs={
-        'placeholder': 'Choose an image',
-        'class': 'form-control-file'
-    }), required=False)
+    image = forms.ImageField(required=True, widget=forms.FileInput(attrs={
+        'class': 'form-control',
+        
+    }))
+    
+      
+   
     
     url = forms.URLField(widget=forms.URLInput(attrs={
         'placeholder': 'Enter URL',

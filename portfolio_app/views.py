@@ -17,9 +17,6 @@ def about(request):
     return render(request, 'portfolio_app/about.html')
 
 
-
-
-
 def contact(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
@@ -33,22 +30,20 @@ def contact(request):
     return render(request, 'portfolio_app/contact.html', {'form' : form})
 
         
-    
-     
 
 
 def add_blog(request):
     if request.user.is_authenticated:
         if request.method == 'POST':
-            form = BlogForm(request.POST)
-            if form.is_valid():
-                form.save()
-                print(form.cleaned_data)
+            addblog_form = BlogForm(request.POST, request.FILES)
+            if addblog_form.is_valid():
+                addblog_form.save()
+                print(addblog_form.cleaned_data)
                 return redirect('show_blog')
         else:
-            form = BlogForm()
+            addblog_form = BlogForm()
             
-        return render(request, 'portfolio_app/add_blog.html', {'form':form})
+        return render(request, 'portfolio_app/add_blog.html', {'addblog_form':addblog_form})
     return HttpResponse("<h3>Only users can add a blog!</h3>")
 
 
@@ -112,7 +107,11 @@ def show_project(request):
 
 def project_details(request, title):
     project_details = get_object_or_404(Project, pk=title)
-    return render(request, 'portfolio_app/project_details.html', {'project_details':project_details})
+    reviews = project_details.reviews.all()
+    
+    print(reviews)
+    return render(request, 'portfolio_app/project_details.html', {'project_details':project_details, 'reviews':reviews})
+
 
    
 def project_review(request):
@@ -126,6 +125,8 @@ def project_review(request):
         review = ProjectReviewForm()
     return render(request, 'portfolio_app/project_review.html', {'review':review})
   
+  
+
     
     
 def download_resume(request):
@@ -133,4 +134,7 @@ def download_resume(request):
     response = HttpResponse(resume.file, content_type='application/pdf')
     response['Content-Disposition'] = 'attachment; filename="cv.pdf"'
     return response
+
+
+
 

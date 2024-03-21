@@ -5,15 +5,17 @@
 {% block title %}Add Blog{% endblock %}
 
 {% block content %}
-<section class="addblog-section">
+
   <div class="addblog">
     <form method="post" enctype="multipart/form-data">
-      {% csrf_token %}
-      {{form.as_p}}
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+      <div class="addblog-child">
+        {% csrf_token %}
+        {{addblog_form.as_p}}
+      </div>
+      <div>
+        <button class="addblog-button">Submit</button>
       </div>
     </form>
   </div>
-</section>
+
 {% endblock %} 

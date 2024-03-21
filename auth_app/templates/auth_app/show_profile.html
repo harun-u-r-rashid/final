@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<br />
+<br />
+
+<div class="profile-container">
+    <div class="profile-box">
+        <p>PERSONAL INFORMATION</p>
+        {% if user.is_authenticated %}
+        {% if user.picture %}
+        <img src="{{user.picture.url}}" class="profile-pic">
+        {% else %}
+        <img src="{% static 'image/logo.png' %}" class="profile-pic">
+        {% endif %}
+        {% endif %}
+
+        <h1>Username: {{user.username}}</h1>
+        <h1>First Name: {{user.first_name}}</h1>
+        <h1>Last_name: {{user.last_name}}</h1>
+        <h1>Email : {{user.email}}</h1>
+        <h1>Number: {{user.phone_number}}</h1>
+        <div>
+            <button class="editprofile-button"> <a href="{% url 'edit_profile' %}">Edit Profile</a></button>
+        </div>
+
+    </div>
+
+   
+</div>
+
+{% endblock %}

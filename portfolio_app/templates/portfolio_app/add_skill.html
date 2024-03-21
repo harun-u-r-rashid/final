@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 {% load static %}
 
@@ -6,17 +5,20 @@
 
 {% block content %}
 
-<section class="addskill-section">
-  <div class="addskill">
-    <form method="post">
+
+<div class="addskill">
+  <form method="post">
+    <div class="addskill-child">
       {% csrf_token %}
       {{ skill.as_p }}
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block">Submit</button>
-      </div>
-    </form>
-  </div>
+    </div>
 
-</section>
+    <div>
+      <button class="addskill-button">Submit</button>
+    </div>
+  </form>
+</div>
 
-{% endblock %} 
+
+
+{% endblock %}

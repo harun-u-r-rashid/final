@@ -5,19 +5,18 @@
 
 {% block content %}
 
-<section class="project-section">
-    <br />
+
     <div class="project-container">
         <div class="project-title">
             <h1><b>MY PROJECT</b></h1>
         </div>
         <br/>
 
-        <section class="addproject-btns">
-            <div>
+        
+            <div class="addproject-btns">
                 <a class="add_projects" href="{% url 'add_project' %}">Add Project+</a>
             </div>
-        </section>
+      
         <br />
 
         <div class="project-content">
@@ -47,6 +46,6 @@
             {% endif %}
         </div>
     </div>
-</section>
+
 
 {% endblock %}
