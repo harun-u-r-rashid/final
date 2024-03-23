@@ -146,10 +146,11 @@ ul li a:hover {
   font-weight: 600;
 }
 
-.home-description {
+.home-description p{
   line-height: 2.2rem;
   color: var(--text-light);
   margin-bottom: 2rem;
+  font-size: 18px;
 }
 
 .showproject-btns {

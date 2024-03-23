@@ -28,6 +28,7 @@
                 <li><a href="{% url 'contact' %}">Contact</a></li>
                 {% if user.is_authenticated %}
 
+                
                 {% if user.picture %}
                 <li><img src="{{user.picture.url}}" class="user-img" onclick="toggleMenu()"></li>
                 {% else %}
@@ -35,17 +36,17 @@
                 {% endif %}
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="sub-menu">
-                            <div class="user-dropdown">
-                                {% if user.picture %}
+                        <div class="user-dropdown">
+                            {% if user.picture %}
                             <img src="{{user.picture.url}}" class="dropdown-profile-pic">
                             {% else %}
                             <img src="{% static 'image/logo.png' %}" class="dropdown-profile-pic">
                             {% endif %}
-                            </div>
-                            <div class="user-info">
-                                <p><b>Username: {{user.username}}</b></p>
-                            </div>
-                       
+                        </div>
+                        <div class="user-info">
+                            <p><b>Username: {{user.username}}</b></p>
+                        </div>
+
                         <hr>
                         <a href="{% url 'show_profile' %}" class="sub-menu-link">
                             <img src="{% static 'image/profile.png' %}" alt="Profile Icon">
