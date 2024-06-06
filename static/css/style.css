@@ -8,20 +8,7 @@
 
 
 */
-
-@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap");
-
-:root {
-  /* --primary-color: #a855f7;
-  --primary-color-dark: #9333ea;
-  --secondary-color: #ca8a04;
-  --text-dark: #1f2937;
-  --text-light: #6b7280;
-  --extra-light: #faf5ff; */
-  --max-width: 1250px;
-}
-
-
+/* 
 
 * {
   padding: 0;
@@ -95,13 +82,16 @@ ul li a {
   font-weight: 600;
   color: var(--text-dark);
   transition: 0.3s;
-}
+} 
 
 ul li a:hover {
   border-top-color: var(--secondary-color);
   border-bottom-color: var(--secondary-color);
   color: var(--secondary-color);
 }
+*/
+
+/*
 
 .home-section {
   background-color: var(--extra-light);
@@ -174,7 +164,7 @@ ul li a:hover {
 .btns:hover{
   background: #1a539e;
 }
-
+*/
 
 .user-img {
   width: 40px;

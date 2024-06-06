@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}BLOG{% endblock%}
+
+{% block content %}
+
+
+  <div class="blog-container">
+    <div class="blog-title">
+      <h1><b>MY BLOG</b></h1>
+    </div>
+    <br />
+
+    <section>
+      <div class="addblog-btns">
+        <a class="btns" href="{% url 'add_blog' %}">ADD BLOG+</a>
+      </div>
+    </section>
+    <br />
+
+    <div class="blog-content">
+      {% if blog %}
+      {% for i in blog %}
+
+      <div class="blog-item">
+
+        <div class="blog-img">
+          <img src="{{ i.image.url }}">
+        </div>
+
+
+        <div class="blog-text">
+
+          <span>{{ i.create_date }}</span>
+          <h2>{{ i.title }}</h2>
+          <p>{{ i.content }}</p>
+        </div>
+      </div>
+      {% endfor %}
+
+      {% else %}
+      <div>
+        <h3><b>NO BLOG TO SHOW!</b></h3>
+      </div>
+
+      {% endif %}
+
+    </div>
+  </div>
+
+{% endblock %}

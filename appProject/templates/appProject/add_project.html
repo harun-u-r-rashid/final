@@ -1,0 +1,22 @@
+
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}Add Project{% endblock %}
+
+{% block content %}
+  <div class="addproject">
+    <form method="post" enctype="multipart/form-data">
+      <div class="addproject-child">
+        {% csrf_token %}
+        {{ project.as_p }}
+      </div>
+      
+      <div>
+        <button class="addproject-button">Submit</button>
+      </div>
+    </form>
+  </div>
+
+
+{% endblock %} 

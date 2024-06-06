@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="container" id="container">
+  <div class="form-container sign-in">
+    <form method="POST">
+      {% csrf_token %}
+      <h1>Sign In</h1>
+      <span>Use your username & password for sign in</span>
+      {{ login_form.as_p }}
+      <a href="#">Forget Your Password?</a>
+      <button>Sign In</button>
+    </form>
+  </div>
+  
+  <div class="toggle-container">
+    <div class="toggle">
+        <div class="toggle-panel toggle-right">
+            <h1>Greetings, buddy</h1>
+            <p>Don't have account? Click for signup</p>
+           <div>
+            <a class="hidden" href="{% url 'register' %}">Sign Up</a>
+           </div>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}

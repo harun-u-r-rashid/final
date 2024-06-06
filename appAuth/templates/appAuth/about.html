@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}About{% endblock%}
+
+{% block content %}
+
+ 
+        <div class="about">
+            <div class="about-image">
+                <img src="{% static 'image/about.png' %}" />
+            </div>
+            <h1 class="title-one">Hello!</h1>
+            <h3 class="title-two">Here's who I am & what I do...</h3>
+        
+            <div class="about-description">
+                <p>Welcome here, I'm Harunur Rashid, a passionate fresh backend developer. I am skilled in Python, Django and SQL. Stay connected and find my project in this portfolio.</p>
+            </div>
+
+            <div class="resume-btns"> 
+                <a class="resumes" href="{% url 'download' %}" class="btn btn-pink">DOWNLOAD RESUME</a>
+            </div>
+
+        </div>
+    
+{% endblock %}

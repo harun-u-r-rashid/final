@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+
+  <div class="editprofile">
+    <form method="post" enctype="multipart/form-data">
+      <div class="editprofile-child">
+        {% csrf_token %}
+        {{ form.as_p }}
+      </div>
+     
+      <div>
+        <button class="editprofile-button">Update</button>
+      </div>
+    </form>
+  </div>
+
+</section>
+
+{% endblock %}
