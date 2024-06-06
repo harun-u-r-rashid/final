@@ -1,25 +1,25 @@
 .homeSection {
-        width: 1300px;
-        justify-content: space-between;
-        margin: auto;
+        background-color: rgba(250, 235, 215, 0.466);
+        height: auto;
+        min-height: 95vh;
 }
 
 .homeContainer {
-        margin-top: 100px;
+        margin: 10px auto;
+        padding: 80px 10px 10px 20px;
         display: flex;
-        justify-content: space-between;
-
-
+        justify-content: center;
+        gap: 50px;
 }
 
 .homeTextContent {
-        width: 700px;
+        max-width: 700px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+
         letter-spacing: 1px;
         word-spacing: 3px;
-        margin-left: 80px;
+
 }
 
 .homeSubtitle {
@@ -35,9 +35,7 @@
         font-size: 2.5rem;
         font-weight: bold;
         line-height: 3rem;
-        color: var(--text-dark);
         margin-bottom: 1rem;
-
 }
 
 .title span {
@@ -53,34 +51,102 @@
         font-size: 18px;
 }
 
-.showprojectBtn a{
+.image {
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+}
+
+.image img {
+        width: 100%;
+        max-width: 400px;
+        min-width: 300px;
+        border-radius: 50%;
+        position: relative;
+}
+
+.showprojectBtn a {
         color: white;
         font-size: 17px;
-        background-color: #481a4a;
+        background-color: black;
         text-decoration: none;
         padding: 7px 10px;
         border-radius: 10px 5px 10px 5px;
         cursor: pointer;
         transition: 0.5s;
-       
 }
 
 .showprojectBtn a:hover {
-        background-color: #481a4abb;  
-        
+        background-color: white;
+        color: black;
 }
 
+/* Media Queries */
+@media only screen and (max-width: 1099px) {
+        .homeContainer {
+                flex-direction: column;
+                align-items: center;
+        }
 
+        .homeTextContent {
+                width: 100%;
+                order: 2;
 
+        }
 
-.image {
-        width: 400px;
-        margin-left: -50px;
+        .title {
+                font-size: 2.2rem;
+                line-height: 2.8rem;
+        }
 
+        .homeDescription {
+                font-size: 17px;
+        }
+
+        .image {
+                width: 100%;
+                max-width: 350px;
+                order: 1;
+               
+        }
+
+        .image img {
+                width: 100%;
+                max-width: 350px;
+                min-width: 250px;
+        }
 }
 
+@media only screen and (max-width: 680px) {
+        .homeContainer {
+                flex-direction: column;
+                align-items: center;
+        }
 
-.image img {
-        width: 90%;
+        .homeTextContent {
+                width: 100%;
+                order: 2;
 
+        }
+
+        .title {
+                font-size: 2rem;
+                line-height: 2.5rem;
+        }
+
+        .homeDescription {
+                font-size: 16px;
+        }
+
+        .image {
+                width: 100%;
+                max-width: 300px;
+                order: 1;
+        }
+
+        .image img {
+                width: 100%;
+                max-width: 300px;
+                min-width: 200px;
+        }
 }

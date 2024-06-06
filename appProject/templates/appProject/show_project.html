@@ -1,42 +1,40 @@
+
 {% extends 'index.html' %}
 {% load static %}
 
 {% block title %}Project{% endblock %}
 
-{% block content %}
+{% block body %}
 
+<main>
+    <section class="projectSection">
 
-    <div class="project-container">
-        <div class="project-title">
-            <h1><b>MY PROJECT</b></h1>
-        </div>
-        <br/>
+        <h3>All projects</h3>
 
-        
-            <div class="addproject-btns">
-                <a class="add_projects" href="{% url 'add_project' %}">Add Project+</a>
-            </div>
-      
-        <br />
-
-        <div class="project-content">
+        <div class="projectContainer">
             {% if project %}
-            {% for project in project %}
+            {% for p in project %}
 
-            <div class="project-item">
-                <div class="project-img">
-                    <img src="{{ project.image.url }}">
+            <div class="singleProject">
+
+                <div class="imageProject">
+                    <img src="{{ p.image.url }}" alt="">
                 </div>
-                <div class="project-text">
-                    <h3 class="btns"><a href="{% url 'project_details' project.pk %}">{{ project.title }}</a></h3>
-                    <h2>{{ project.project_category }}</h2>
-                    {% if project.avg_rating %}
-                    <p>Average Rating: {{ project.avg_rating }}</p>
+
+                <h2>{{ p.title }}</h2>
+
+                <div class="rating">
+                    {% if p.avg_rating %}
+                    <span> {{ p.avg_rating }} </span>
                     {% else %}
-                    <p>No ratings yet.</p>
+                    <span>No ratings yet.</span>
                     {% endif %}
                 </div>
+
+                <a href="{% url 'project_details' p.pk %}"><i class="fa-solid fa-circle-info"></i></a>
+
             </div>
+
             {% endfor %}
 
             {% else %}
@@ -45,7 +43,15 @@
             </div>
             {% endif %}
         </div>
-    </div>
 
+        <div class="addProjectBtn">
+            <a href="{% url 'add_project' %}">Add Project+</a>
+        </div>
+
+       
+
+    </section>
+
+</main>
 
 {% endblock %}

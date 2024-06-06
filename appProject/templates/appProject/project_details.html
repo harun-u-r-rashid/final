@@ -3,37 +3,32 @@
 
 {% block title %}Project Details{% endblock %}
 
-{% block content %}
+{% block body %}
 
-<section class="section">
+<section class="detailsSection">
 
-    <div class="details-reviews-container">
-        <div class="details-content">
-            <h2>{{ project_details.title }}</h2>
-            <p>Category: {{ project_details.project_category }}</p>
-            <p>Technologies: {{ project_details.technologies_used }}</p>
-            <p>Description: {{ project_details.description }}</p>
+    <div class="detailsContainer">
+        <div class="projectDetails">
+            <h1>Project Details</h1>
+
+            <h2>Title: <span>{{ project_details.title }}</span></h2>
+            <p>Category: <span>{{ project_details.project_category }}</span></p>
+            <p>Technologies: <span> {{ project_details.technologies_used }}</span> </p>
+            <p>Description: <span>{{ project_details.description }}</span></p>
             <img src="{{ project_details.image.url }}" alt="{{ project_details.title }}">
             <p class="url">URL: <a href="{{ project_details.url }}">{{ project_details.url }}</a></p>
 
-            <div class="review-btns">
-                <a class="btns" href="{% url 'review' %}" class="btn btn-pink">Add Review+</a>
-            </div>
-            
+
         </div>
-    </div>
-        <aside class="review-side">
-            <div class="review">
-                <h2 class="title">VIEWERS REVIEW</h2>
+
+        <div class="projectReview">
+            <h2 class="title">VIEWERS REVIEW</h2>
+            <div class="reviewContainer">
                 {% if reviews %}
                 {% for r in reviews %}
-                <div class="body-review">
+                <div class="reviewCard">
                     <h1>rating: {{r.rating}}</h1>
-                    <p>
-                        {{r.review}}
-                    </p>
-                   
-                    <div class="rating">
+                    <div class="projectRating">
                         <i class="far fa-star"></i>
                         <i class="far fa-star"></i>
                         <i class="far fa-star"></i>
@@ -42,14 +37,25 @@
                         <i class="far fa-star-half"></i>
                         <i class="far fa-star-half"></i>
                     </div>
+                    <p>
+                        {{r.review}}
+                    </p>
+
                 </div>
                 {% endfor %}
                 {% else %}
                 <h1 class="noreview">No reviews yet</h2>
-                {% endif %}
+                    {% endif %}
             </div>
-        </aside>
-    
+        </div>
+
+        <div class="reviewBtn">
+            <a href="{% url 'review' %}" class="btn btn-pink">Review+</a>
+        </div>
+
+    </div>
+
+
 </section>
 
 

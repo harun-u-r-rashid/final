@@ -3,50 +3,49 @@
 
 {% block title %}BLOG{% endblock%}
 
-{% block content %}
+{% block  body %}
 
 
-  <div class="blog-container">
-    <div class="blog-title">
-      <h1><b>MY BLOG</b></h1>
-    </div>
-    <br />
-
-    <section>
-      <div class="addblog-btns">
-        <a class="btns" href="{% url 'add_blog' %}">ADD BLOG+</a>
-      </div>
-    </section>
-    <br />
-
-    <div class="blog-content">
-      {% if blog %}
-      {% for i in blog %}
-
-      <div class="blog-item">
-
-        <div class="blog-img">
-          <img src="{{ i.image.url }}">
+<main>
+  <section class="projectSection">
+    <h3>All blogs</h3>
+     
+  
+   
+      
+      <div class="projectContainer">
+        {% if blog %}
+        {% for i in blog %}
+  
+        <div class="singleBlog">
+  
+          <div class="imageBlog">
+            <img src="{{ i.image.url }}">
+          </div>
+  
+           <div class="blogText">
+            <span>{{ i.create_date }}</span>
+            <h2>Title : {{ i.title }} <sup>(author: {{i.author}})</sup></h2>
+            <p>{{ i.content }}</p>
+           </div>
+         
         </div>
-
-
-        <div class="blog-text">
-
-          <span>{{ i.create_date }}</span>
-          <h2>{{ i.title }}</h2>
-          <p>{{ i.content }}</p>
+        {% endfor %}
+  
+        {% else %}
+        <div>
+          <h3><b>NO BLOG TO SHOW!</b></h3>
         </div>
-      </div>
-      {% endfor %}
-
-      {% else %}
-      <div>
-        <h3><b>NO BLOG TO SHOW!</b></h3>
+  
+        {% endif %}
+  
       </div>
 
-      {% endif %}
-
-    </div>
-  </div>
+      <div class="addProjectBtn">
+          <a href="{% url 'add_blog' %}">ADD BLOG+</a>
+        </div>
+   
+  </section>
+</main>
 
 {% endblock %}

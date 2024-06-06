@@ -4,18 +4,19 @@
 
 {% block title %}Add Blog{% endblock %}
 
-{% block content %}
-
-  <div class="addblog">
+{% block body %}
+<section class="addReviewSection">
+  <div class="addReview">
     <form method="post" enctype="multipart/form-data">
-      <div class="addblog-child">
         {% csrf_token %}
         {{addblog_form.as_p}}
-      </div>
-      <div>
-        <button class="addblog-button">Submit</button>
-      </div>
+      
+      
+        <button class="addReviewBtn">Submit</button>
+      
     </form>
   </div>
+
+</section>
 
 {% endblock %} 

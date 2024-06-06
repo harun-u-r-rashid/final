@@ -29,9 +29,8 @@ def show_project(request):
 def project_details(request, title):
     project_details = get_object_or_404(models.Project, pk=title)
     reviews = project_details.reviews.all()
-    
     print(reviews)
-    return render(request, 'portfolio_app/project_details.html', {'project_details':project_details, 'reviews':reviews})
+    return render(request, 'appProject/project_details.html', {'project_details':project_details, 'reviews':reviews})
 
 
    
@@ -43,8 +42,8 @@ def project_review(request):
             print(review.cleaned_data)
             return redirect('show_project')
     else:
-        review = models.ProjectReviewForm()
-    return render(request, 'portfolio_app/project_review.html', {'review':review})
+        review = forms.ProjectReviewForm()
+    return render(request, 'appProject/project_review.html', {'review':review})
   
   
 

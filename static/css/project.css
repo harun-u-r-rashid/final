@@ -1,0 +1,485 @@
+/* Show Project section  */
+.projectSection {
+        background-color: #a39c9c33;
+        height: auto;
+        min-height: 110vh;
+}
+
+
+.projectSection h3 {
+        text-align: center;
+        padding: 30px 0 10px 0;
+        text-transform: uppercase;
+        font-size: 30px;
+}
+
+
+.projectContainer {
+        margin-left: 200px;
+        margin-right: 200px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 32px;
+        align-items: center;
+        padding: 10px;
+}
+
+
+
+.imageProject {
+        width: 100%;
+        opacity: 0.9;
+
+}
+
+
+.imageProject:hover {
+        opacity: 1;
+}
+
+.imageProject>img {
+        max-width: 100%;
+}
+
+.singleProject {
+        width: 300px;
+        box-shadow: 3px 3px 8px gray;
+        text-align: center;
+}
+
+
+.projectSection h2 {
+        margin-top: 10px;
+}
+
+.singleProject>h3 {
+        margin: 10px 0px;
+        font-size: 30px;
+
+}
+
+
+.rating {
+        border-top: 1px dashed rgba(128, 128, 128, 0.83);
+        border-bottom: 1px dashed rgba(128, 128, 128, 0.848);
+        padding: 5px 0;
+        margin: 10px 20px;
+}
+
+
+.rating span {
+        font-size: 18px;
+        color: brown;
+
+}
+
+.span1 {
+        font-size: 25px;
+}
+
+.singleProject>a>i {
+        font-size: 30px;
+        padding: 3px;
+        color: black;
+        margin-bottom: 10px;
+        transition: 0.5s;
+        cursor: pointer;
+
+}
+
+.singleProject>a>i:hover {
+        color: #14577e;
+
+
+}
+
+.addProjectBtn {
+        margin: 20px 200px;
+        padding: 10px
+}
+
+.addProjectBtn a {
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 3px 5px;
+        display: inline-block;
+        border: 1px solid rgba(165, 42, 42, 0.397);
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+        transition: 0.5s;
+
+}
+
+.addProjectBtn a:hover {
+        background-color: white;
+        color: black;
+}
+
+
+
+
+
+/* Details and review section */
+
+.detailsSection {
+        background-color: #a39c9c33;
+        height: auto;
+        min-height: 100vh;
+}
+
+
+.detailsContainer {
+        margin: 0 250px;
+        padding: 0 20px;
+}
+
+.projectDetails {
+        align-items: center;
+        padding: 10px;
+
+}
+
+
+.projectDetails h1 {
+        padding: 30px 0 10px 0;
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: brown;
+}
+
+.projectDetails h2 {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 10px 0;
+}
+
+
+
+.projectDetails p {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 10px 0;
+}
+
+
+.projectDetails img {
+        width: 300px;
+
+}
+
+
+
+.projectDetails span {
+        font-size: 17px;
+        font-weight: bold;
+}
+
+
+
+
+.projectReview {
+        margin-top: 20px;
+}
+
+
+.projectReview h2 {
+        padding: 30px 0 10px 0;
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: brown;
+}
+
+.reviewContainer {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+        padding: 10px;
+}
+
+
+.reviewCard {
+        background-color: #d5cfcf62;
+        padding: 10px;
+        color: black;
+
+}
+
+.projectRating {
+        color: #ffcd3c;
+}
+
+.reviewBtn {
+        padding: 10px;
+
+}
+
+.reviewBtn a {
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 3px 5px;
+        display: inline-block;
+        border: 1px solid rgba(165, 42, 42, 0.397);
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+        transition: 0.5s;
+}
+
+.reviewBtn a:hover {
+        background-color: white;
+        color: black;
+}
+
+
+@media only screen and (max-width: 680px) {
+        .projectContainer {
+                margin-left: 60px;
+                margin-right: 60px;
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                grid-gap: 32px;
+                align-items: center;
+                padding: 10px;
+        }
+
+        .addProjectBtn {
+                margin: 20px 60px;
+                padding: 10px;
+
+        }
+
+        .singleProject {
+                width: 100%;
+        }
+
+        .detailsContainer {
+                margin: 0 auto;
+        }
+
+        .reviewContainer {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                grid-gap: 20px;
+                padding: 10px;
+        }
+
+
+
+}
+
+
+
+@media only screen and (min-width: 689px) and (max-width: 1099px) {
+
+        .projectContainer {
+                margin-left: 100px;
+                margin-right: 100px;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 32px;
+                align-items: center;
+                padding: 10px;
+        }
+
+        .addProjectBtn {
+                margin: 20px 100px;
+                padding: 10px;
+
+        }
+
+        .singleProject {
+                width: 100%;
+        }
+
+        .detailsContainer {
+                margin: 0 100px;
+        }
+
+        .reviewContainer {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 20px;
+                padding: 10px;
+        }
+
+}
+
+
+
+/* Review add page css */
+/* Add project css is here as I set the class same */
+
+.addReviewSection {
+        background-color: #a39c9c33;
+        height: auto;
+        min-height: 100vh;
+}
+
+
+.addReview {
+        margin: 0px 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+.addReview form {
+        border: 1px solid rgba(128, 128, 128, 0.132);
+        margin-top: 80px;
+        padding: 50px;
+}
+
+
+
+.addReview form select {
+        width: 500px;
+        margin-bottom: 15px;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        font-size: 16px;
+        background-color: #80808029;
+
+}
+
+.addReview form input {
+        width: 500px;
+        margin-bottom: 15px;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        font-size: 16px;
+        background-color: #80808029;
+
+}
+
+
+.addReviewBtn {
+        background-color: black;
+        color: white;
+        border: none;
+        padding: 4px 8px;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.5s;
+        font-size: 18px;
+        font-weight: bold;
+        border: 1px solid #a52a2a5b;
+}
+
+
+.addReviewBtn:hover {
+        background-color: white;
+        color: black;
+}
+
+
+
+.addReview form label {
+        display: none;
+}
+
+
+
+@media only screen and (max-width: 680px) {
+        .projectContainer {
+                margin-left: 60px;
+                margin-right: 60px;
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                grid-gap: 32px;
+                align-items: center;
+                padding: 10px;
+        }
+
+        .addProjectBtn {
+                margin: 20px 60px;
+                padding: 10px;
+
+        }
+
+        .singleProject {
+                width: 100%;
+        }
+
+        .detailsContainer {
+                margin: 0 auto;
+        }
+
+        .reviewContainer {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                grid-gap: 20px;
+                padding: 10px;
+        }
+
+
+        .addReview form select {
+                width: 400px;
+                margin-bottom: 15px;
+                padding: 10px;
+                border: none;
+                border-radius: 3px;
+                font-size: 16px;
+                background-color: #80808029;
+
+        }
+
+        .addReview form input {
+                width: 400px;
+                margin-bottom: 15px;
+                padding: 10px;
+                border: none;
+                border-radius: 3px;
+                font-size: 16px;
+                background-color: #80808029;
+
+        }
+
+
+
+
+
+}
+
+@media only screen and (min-width: 689px) and (max-width: 1099px) {
+
+        .projectContainer {
+                margin-left: 100px;
+                margin-right: 100px;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 32px;
+                align-items: center;
+                padding: 10px;
+        }
+
+        .addProjectBtn {
+                margin: 20px 100px;
+                padding: 10px;
+
+        }
+
+        .singleProject {
+                width: 100%;
+        }
+
+        .detailsContainer {
+                margin: 0 100px;
+        }
+
+        .reviewContainer {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 20px;
+                padding: 10px;
+        }
+
+
+}

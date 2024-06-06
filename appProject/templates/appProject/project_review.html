@@ -4,20 +4,18 @@
 
 {% block title %}Review{% endblock %}
 
-{% block content %}
+{% block body %}
 
-  <div class="addreview">
-    <form method="post">
-      <div class="addreview-child">
+<section class="addReviewSection">
+  <div class="addReview">
+    <form  method="post">
         {% csrf_token %}
         {{ review.as_p }}
-      </div>
-    
-      <div>
-        <button class="addreview-button">Submit</button>
-      </div>
+        <button class="addReviewBtn">Submit</button>
+  
     </form>
   </div>
+</section>
 
 
 {% endblock %} 
