@@ -3,61 +3,42 @@
 
 {% block title %}Skill{% endblock%}
 
-{% block  body %}
+{% block body %}
 
-    <div class="skill-container">
-        <div class="skill-title">
-            <h1><b>MY SKILL</b></h1>
+<section class="skillSection">
+    <div class="skillContainer">
+        {% if skill %}
+        {% for i in skill %}
+        <div class="singleSkill">
+            <div class="imageSkill">
+                <img src="{{i.image.url}}">
+            </div>
+            <div class="skillText">
+                <span><sup>Title : </sup>  {{ i.title }}</span>
+                <h2><sup>Category : </sup>  {{ i.skill_category }}</h2>
+                <p><sup>Description : </sup>  {{ i.description }}</p>
+            </div>
         </div>
-        <br/>
+        {% endfor %}
 
-        <section>
-            <div class="addskill-btns">
-              <a class="btns" href="{% url 'add_skill' %}">+ADD SKILL</a>
-            </div>
-          </section>
-          <br/>
-       
-
-       <div class="skill-content">
-            {% if skill %}
-            {% for i in skill %}
-
-            <div class="skill-item">
-                <div class="skill-img">
-                    <img src="{% static 'image/skill.jpg' %}">
-                </div>
-                <div class="skill-text">
-                    <span>{{ i.title }}</span>
-                    <h2>{{ i.skill_category }}</h2>
-                    <p>{{ i.description }}</p>
-                </div>
-            </div>
-            {% endfor %}
-
-            {% else %}
-            <div>
-                <h3><b>No skill to show!</b></h3>
-            </div>
-
-            {% endif %}
-
+        {% else %}
+        <div>
+            <h3><b>No skill to show!</b></h3>
         </div>
+
+        {% endif %}
+
     </div>
-</section> 
+
+    <div class="addSkillBtn">
+        <a href="{% url 'add_skill' %}">+ADD SKILL</a>
+    </div>
 
 
 
-
+</section>
 
 
 
 
 {% endblock %}
-
-
-
-
-
-
-

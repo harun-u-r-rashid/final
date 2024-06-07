@@ -1,6 +1,6 @@
 .singleBlog{
         width: 300px;
-        height:540px;
+        height:550px;
         background-color: #a52a2a1e;
         border-radius: 5px;
         
@@ -46,13 +46,7 @@
                 padding: 10px;
         }
 
-      
-        
-
-
 }
-
-
 
 @media only screen and (min-width: 689px) and (max-width: 1099px) {
 
@@ -71,11 +65,5 @@
                 padding: 10px;
 
         }
-
-       
-
-       
-
-     
 
 }

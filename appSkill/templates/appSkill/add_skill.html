@@ -3,22 +3,33 @@
 
 {% block title %}Add Skill{% endblock %}
 
-{% block  body %}
+{% block body %}
 
 
-<div class="addskill">
-  <form method="post">
-    <div class="addskill-child">
+<section class="addReviewSection">
+  <div class="addReview">
+    <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
       {{ skill.as_p }}
+        <button class="addReviewBtn">Submit</button>
+      
+    </form>
+  </div>
+
+</section>
+
+
+<!-- 
+<div class="addskill">
+  <form method="post" enctype="multipart/form-data">
+    <div class="addskill-child">
+      
     </div>
 
     <div>
       <button class="addskill-button">Submit</button>
     </div>
   </form>
-</div>
-
-
+</div> -->
 
 {% endblock %}
