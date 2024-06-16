@@ -1,24 +1,23 @@
-.singleBlog{
+.singleBlog {
         width: 300px;
-        height:550px;
-        background-color: #a52a2a1e;
+        height: 550px;
         border-radius: 5px;
-        
+
 }
 
-.singleBlog h2{
+.singleBlog h2 {
         margin: 5px 0;
 }
 
-.imageBlog{
+.imageBlog {
         padding: 5px;
         width: 300px;
-        height: 300px; 
+        height: 300px;
         overflow: hidden;
-        
+
 }
 
-.imageBlog img{
+.imageBlog img {
         border-radius: 5px;
         width: 100%;
         height: 100%;
@@ -26,12 +25,12 @@
         overflow: hidden;
 }
 
-.imageBlog img:hover{
+.imageBlog img:hover {
         border-radius: 5px;
         transform: scale(1.1);
 }
 
-.blogText{
+.blogText {
         margin: 0px 30px;
 }
 
@@ -63,7 +62,6 @@
         .addProjectBtn {
                 margin: 20px 100px;
                 padding: 10px;
-
         }
-
 }
+

@@ -13,8 +13,6 @@ from django.contrib.auth.forms import AuthenticationForm
 from . import forms
 from django.http import HttpResponse 
 from django.contrib.auth.decorators import login_required
-from django.db.models import Avg
-
 
 
 

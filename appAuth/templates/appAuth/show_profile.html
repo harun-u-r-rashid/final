@@ -4,8 +4,7 @@
 {% block title %}Profile{% endblock %}
 
 {% block  body %}
-<br />
-<br />
+
 
 <div class="profile-container">
     <div class="profile-box">
@@ -24,7 +23,7 @@
         <h1>Email : {{user.email}}</h1>
         <h1>Number: {{user.phone_number}}</h1>
         <div>
-            <button class="editprofile-button"> <a href="{% url 'edit_profile' %}">Edit Profile</a></button>
+            <button class="editprofile-button"> <a href="{% url 'edit_profile' %}">Update</a></button>
         </div>
 
     </div>

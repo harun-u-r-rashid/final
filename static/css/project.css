@@ -1,6 +1,5 @@
 /* Show Project section  */
 .projectSection {
-        background-color: #a39c9c33;
         height: auto;
         min-height: 110vh;
 }
@@ -123,7 +122,6 @@
 /* Details and review section */
 
 .detailsSection {
-        background-color: #a39c9c33;
         height: auto;
         min-height: 100vh;
 }

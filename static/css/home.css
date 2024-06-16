@@ -1,5 +1,4 @@
 .homeSection {
-        background-color: rgba(250, 235, 215, 0.466);
         height: auto;
         min-height: 95vh;
 }
@@ -22,12 +21,11 @@
 
 }
 
-.homeSubtitle {
+.homeSubtitle p {
         color: #4f0652;
         font-size: 30px;
         letter-spacing: 2px;
         font-weight: 800;
-        font-style: italic;
         margin-bottom: 2rem;
 }
 

@@ -22,12 +22,14 @@
 
 
   <!-- Internal CSS -->
-  <link rel="stylesheet" href="{% static 'css/header.css' %}">
+
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="{% static 'css/home.css' %}">
   <link rel="stylesheet" href="{% static 'css/project.css' %}">
   <link rel="stylesheet" href="{% static 'css/blog.css' %}">
   <link rel="stylesheet" href="{% static 'css/skill.css' %}">
+  <link rel="stylesheet" href="{% static 'css/about.css' %}">
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
 
 </head>
 
@@ -36,11 +38,14 @@
 
   <nav class="bg-white border-gray-200 dark:bg-gray-900">
     {% if user.is_authenticated %}
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <img src="{% static 'image/portfolio.png' %}" class="h-8" alt="Flowbite Logo" />
-        <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Portfolio</span> -->
+    <div id="navpicture" class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <!-- <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="{% static 'image/portfolio.png' %}" class="h-8" alt="" />
+      </a> -->
+      <a href="#" class="navbar-logo">
+        <img src="{% static 'image/portfolio.png' %}" alt="Portfolio Logo" class="logo-img" />
       </a>
+      
       <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
         <button type="button"
           class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
@@ -60,8 +65,8 @@
           id="user-dropdown">
           <div class="px-4 py-3">
 
-            <span class="block text-sm text-gray-900 dark:text-white">{{user.username}}</span>
-            <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">{{user.email}}</span>
+            <span class="block text-sm text-gray-900 dark:text-white text-center">{{user.username}}</span>
+            <span class="block text-sm  text-gray-500 truncate dark:text-gray-400 text-center">{{user.email}}</span>
 
 
 
@@ -70,11 +75,11 @@
 
             <li>
               <a href="{% url 'show_profile' %}"
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Profile</a>
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white text-center">Profile</a>
             </li>
             <li>
               <a href="{% url 'logout' %}"
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Log
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white text-center">Log
                 out</a>
             </li>
 
@@ -99,20 +104,19 @@
           class="navUL  flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
           <li>
             <a href="{% url 'home' %}"
-              class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
-              aria-current="page">Home</a>
+              class="block py-2 px-3 text-center text-gray-900 text-center rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Home</a>
           </li>
           <li>
             <a href="{% url 'about' %}"
-              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+              class="block py-2 px-3 text-gray-900 text-center rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
           </li>
           <li>
             <a href="{% url 'show_blog' %}"
-              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Blog</a>
+              class="block py-2 px-3 text-gray-900 text-center rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Blog</a>
           </li>
           <li>
             <a href="{% url 'show_skill' %}"
-              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Skill</a>
+              class="block py-2 px-3 text-gray-900 text-center rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Skill</a>
           </li>
 
 
@@ -121,9 +125,8 @@
     </div>
     {% else %}
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <img src="{% static 'image/portfolio.png' %}" class="h-8" alt="Flowbite Logo" />
-        <!-- <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Portfolio</span> -->
+      <a href="#" class="navbar-logo">
+        <img src="{% static 'image/portfolio.png' %}" alt="Portfolio Logo" class="logo-img" />
       </a>
       <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
         <button type="button"
@@ -144,8 +147,8 @@
           id="user-dropdown">
           <div class="px-4 py-3">
 
-            <span class="block text-sm text-gray-900 dark:text-white">&#128075</span>
-            <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">Welcome guest</span>
+            <span class="block text-2xl text-gray-900 dark:text-white text-center">&#128075</span>
+            <span class="block text-sm  text-gray-500 truncate dark:text-gray-400 text-center">Welcome guest</span>
 
 
 
@@ -153,12 +156,12 @@
           <ul class="py-2" aria-labelledby="user-menu-button">
             <li>
               <a href="{% url 'register' %}"
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Resiter
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white text-center">Resiter
               </a>
             </li>
             <li>
               <a href="{% url 'login' %}"
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Log
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white text-center">Log
                 in</a>
             </li>
 
@@ -181,26 +184,26 @@
       <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
         <ul
           class="navUL flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+
           <li>
             <a href="{% url 'home' %}"
-              class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
-              aria-current="page">Home</a>
+              class="block py-2 px-3 text-center text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Home</a>
           </li>
           <li>
             <a href="{% url 'about' %}"
-              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+              class="block py-2 px-3 text-center text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
           </li>
           <li>
             <a href="{% url 'show_blog' %}"
-              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Blog</a>
+              class="block py-2 px-3 text-gray-900 text-center rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Blog</a>
           </li>
           <li>
             <a href="{% url 'show_skill' %}"
-              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Skill</a>
+              class="block py-2 px-3 text-gray-900 text-center rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Skill</a>
           </li>
           <li>
             <a href="{% url 'login' %}"
-              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Login</a>
+              class="block py-2 px-3 text-gray-900 text-center rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Login</a>
           </li>
 
         </ul>
@@ -214,7 +217,9 @@
 
   {% endblock %}
 
-  
+
+
+
 </body>
 
 </html>

@@ -1,20 +1,27 @@
+
 {% extends 'index.html' %}
 {% load static %}
 
 {% block title %}Register{% endblock %}
 {% block  body %}
 
-<div class="register">
-  <h2>Ready to join us? Fill in your details below to sign up!</h2>
-  <form method="POST" enctype="multipart/form-data">
-    <div class="child-register">
-      {% csrf_token %}
-      {{form.as_p}}
+<section class="regSection">
+  <div class="regContainer">
+    <h1>Complete your registrations</h1>
+    
+    <div class="formContainer">
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <button id="authButton">Sign In</button>
+
+      </form>
     </div>
-    <div >
-      <button class="signup-button">signup</button>
-    </div>
-  </form>
-</div>
+
+  </div>
+</section>
+
+
 {% endblock %}
 
